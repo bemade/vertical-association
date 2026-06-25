@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <!-- MEMBERSHIP -->
-
     <!-- MEMBERSHIP/MEMBERSHIP PRODUCTS -->
-
     <record model="ir.ui.view" id="membership_product_search_form_view">
         <field name="name">membership.product.search.form</field>
         <field name="model">product.template</field>
@@ -17,7 +15,7 @@
                     domain="[('active','=',False)]"
                 />
                 <field name="categ_id" operator="child_of" />
-                <group expand='0' string='Group by...'>
+                <group>
                     <filter
                         string='Category'
                         name="category"
@@ -34,7 +32,6 @@
             </search>
         </field>
     </record>
-
     <record model="ir.ui.view" id="membership_products_tree">
         <field name="name">Membership products</field>
         <field name="model">product.template</field>
@@ -51,7 +48,6 @@
             </list>
         </field>
     </record>
-
     <record id="membership_products_kanban" model="ir.ui.view">
         <field name="name">product.template.kanban</field>
         <field name="model">product.template</field>
@@ -88,7 +84,6 @@
             </kanban>
         </field>
     </record>
-
     <record model="ir.ui.view" id="membership_products_form">
         <field name="name">Membership Products</field>
         <field name="model">product.template</field>
@@ -146,7 +141,6 @@
             </form>
         </field>
     </record>
-
     <record model="ir.actions.act_window" id="action_membership_products">
         <field name="name">Membership Products</field>
         <field name="res_model">product.template</field>
@@ -159,21 +153,18 @@
             }</field>
         <field name="search_view_id" ref="membership_product_search_form_view" />
     </record>
-
     <record model="ir.actions.act_window.view" id="action_membership_product_view_tree">
         <field name="sequence" eval="1" />
         <field name="view_mode">list</field>
         <field name="view_id" ref="membership_products_tree" />
         <field name="act_window_id" ref="action_membership_products" />
     </record>
-
     <record model="ir.actions.act_window.view" id="action_membership_product_view_form">
         <field name="sequence" eval="2" />
         <field name="view_mode">form</field>
         <field name="view_id" ref="membership_products_form" />
         <field name="act_window_id" ref="action_membership_products" />
     </record>
-
     <record
         model="ir.actions.act_window.view"
         id="action_membership_product_view_kanban"
@@ -183,7 +174,6 @@
         <field name="view_id" ref="membership_products_kanban" />
         <field name="act_window_id" ref="action_membership_products" />
     </record>
-
     <menuitem
         name="Members"
         id="menu_association"

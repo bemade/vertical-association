@@ -9,7 +9,6 @@ class TestMembershipCommon(AccountTestInvoicingCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-
         # Test memberships
         cls.membership_1 = cls.env["product.product"].create(
             {
@@ -21,7 +20,6 @@ class TestMembershipCommon(AccountTestInvoicingCommon):
                 "list_price": 100.00,
             }
         )
-
         # Test people
         cls.partner_1 = cls.env["res.partner"].create(
             {
